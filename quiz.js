@@ -225,6 +225,7 @@ const QUESTIONS = [
     backBtn: $("#back-btn"),
     emailForm: $("#email-form"),
     builtInForm: $("#builtin-form"),
+    emailIntro: $("#email-intro"),
     flodeskMount: $("#flodesk-mount"),
     fieldName: $("#field-name"),
     fieldEmail: $("#field-email"),
@@ -329,9 +330,12 @@ const QUESTIONS = [
     const flodeskId = CONFIG.flodesk.formIds[state.result.key];
     show("email");
     if (flodeskId) {
+      // Flodesk form carries its own heading + fields, so hide our copy.
+      el.emailIntro.hidden = true;
       renderFlodeskForm(flodeskId);
     } else {
       // Fallback: built-in branded form (redirects itself).
+      el.emailIntro.hidden = false;
       el.builtInForm.hidden = false;
       el.flodeskMount.hidden = true;
       setTimeout(() => el.fieldName && el.fieldName.focus(), 250);
@@ -353,7 +357,7 @@ const QUESTIONS = [
       sm.src = h + s + ".mjs" + v; f.parentNode.insertBefore(sm, f);
       var l = d.createElement(t); l.async = true;
       l.src = h + s + ".js" + v; f.parentNode.insertBefore(l, f);
-    })(window, document, "script", "https://assets.flodesk.com/universal", "/universal", "fd");
+    })(window, document, "script", "https://assets.flodesk.com", "/universal", "fd");
   }
   function renderFlodeskForm(formId) {
     el.builtInForm.hidden = true;
