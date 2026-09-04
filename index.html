@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Your Fertility Blind Spot</title>
+  <meta name="description" content="You're not broken. You're just missing the piece between you and those two pink lines. Take the free 5-minute quiz and finally get answers that make sense for your body." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400;1,9..144,600&family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="quiz" role="main">
+
+    <!-- ============ INTRO ============ -->
+    <section class="card screen" data-screen="intro">
+      <p class="eyebrow">A free 5-minute quiz</p>
+      <h1>Find Your <span class="hl">Fertility Blind Spot</span></h1>
+      <p class="lede">
+        <em>You're not broken.</em> You're just missing the piece between you and
+        those two pink lines. The road to becoming a mama can be long, lonely,
+        and challenging. Finding the one thing to shift can make the difference
+        between getting pregnant now and next year.
+      </p>
+      <p class="lede-soft">
+        Answer honestly, Sis. In a few minutes you'll uncover your fertility
+        type and the blind spot that's been holding you back, plus a
+        personalized report with your next steps.
+      </p>
+      <button class="btn btn-primary" data-action="start">Start the quiz</button>
+      <p class="fineprint">
+        For education and reflection only. Not medical advice or a diagnosis.
+        Always talk with your doctor about your individual health.
+      </p>
+    </section>
+
+    <!-- ============ QUESTION ============ -->
+    <section class="card screen" data-screen="question" hidden>
+      <div class="progress" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+      <div class="qmeta">
+        <span class="progress-label" id="progress-label"></span>
+      </div>
+      <h2 class="question-text" id="question-text"></h2>
+      <p class="question-sub" id="question-sub"></p>
+      <div class="options" id="options" role="radiogroup" aria-label="Answer choices"></div>
+      <div class="nav">
+        <button class="btn btn-ghost" id="back-btn" data-action="back">← Back</button>
+      </div>
+    </section>
+
+    <!-- ============ EMAIL CAPTURE ============ -->
+    <section class="card screen" data-screen="email" hidden>
+      <p class="eyebrow">You're all done, Sis 💛</p>
+      <h2 class="question-text">Where should we send your results?</h2>
+      <p class="question-sub">
+        We've pinpointed your fertility type. Pop in your details and we'll send
+        your personalized <strong>Blind Spot Report + Action Guide</strong>
+        straight to your inbox. No spam, ever.
+      </p>
+      <!-- Flodesk inline form mounts here (per-archetype; handles tag + redirect) -->
+      <div id="flodesk-mount" hidden></div>
+
+      <!-- Built-in branded form: used until Flodesk form IDs are added -->
+      <div id="builtin-form">
+        <form id="email-form" class="email-form" novalidate>
+          <label class="field">
+            <span>First name</span>
+            <input type="text" id="field-name" name="name" autocomplete="given-name" placeholder="Your first name" required />
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" id="field-email" name="email" autocomplete="email" placeholder="you@example.com" required />
+          </label>
+          <p class="form-error" id="form-error" hidden></p>
+          <button type="submit" class="btn btn-primary" id="email-submit">Reveal my results →</button>
+        </form>
+        <p class="fineprint">By continuing you agree to receive your results and follow-up emails from Sophie Byfield. Unsubscribe anytime.</p>
+      </div>
+    </section>
+
+    <!-- ============ REDIRECTING ============ -->
+    <section class="card screen redirect-card" data-screen="redirect" hidden>
+      <div class="spinner" aria-hidden="true"></div>
+      <h2 class="question-text">Revealing your fertility blind spot…</h2>
+      <p class="question-sub">Hang tight, Sis. Taking you to your results now.</p>
+      <p class="fineprint">
+        Not redirected automatically?
+        <a href="#" id="manual-redirect">Click here to see your results</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><p>© Sophie Byfield <span id="year"></span></p></footer>
+  <script src="quiz.js"></script>
+</body>
+</html>
