@@ -194,3 +194,28 @@ h1 .hl { color: var(--magenta); }
   .card { padding: 30px 22px; }
   .quiz { padding-top: 26px; }
 }
+
+/* ============================================================
+   Brand Identity V1 skin. Matches the quiz on the Kajabi /quiz page:
+   chalk, charcoal and magenta, Cormorant Garamond + Lora, flat cards,
+   1px lines, no shadows or gradients. Keep this block last.
+   ============================================================ */
+body { background: #E9E7E3; font-family: "Lora", Georgia, serif; }
+.quiz { max-width: 700px; padding: 70px 22px 80px; }
+.card { border-radius: 0; box-shadow: none; border: 1px solid rgba(42, 40, 40, 0.15); background: #fff; animation: none; }
+h1, h2, .question-text { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; letter-spacing: 0; }
+h1 .hl { color: #AD0068; }
+.lede em { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; color: #AD0068; }
+.question-text { font-size: clamp(1.6rem, 4vw, 2.1rem); line-height: 1.2; }
+.eyebrow, .progress-label, .field span, .btn, .section-tag { font-family: "Lora", Georgia, serif; }
+.eyebrow { color: #AD0068; }
+.btn, .option, .field input { border-radius: 2px; }
+.btn-primary { background: #AD0068; box-shadow: none; color: #F4F3F1; }
+.btn-primary:hover { background: #7A0F50; transform: none; }
+.btn-ghost:hover { color: #AD0068; }
+.progress { background: #FAE7EB; border-radius: 0; }
+.progress-bar { background: #AD0068; border-radius: 0; }
+.option { background: #fff; border: 1px solid rgba(42, 40, 40, 0.15); }
+.option:hover, .option.selected { border-color: #AD0068; background: #FAE7EB; box-shadow: none; }
+.field input:focus { border-color: #AD0068; box-shadow: 0 0 0 3px #FAE7EB; }
+.spinner { border-color: #FAE7EB; border-top-color: #AD0068; }

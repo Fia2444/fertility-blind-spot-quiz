@@ -1,2 +1,10 @@
 .DS_Store
 node_modules/
+
+# Generated Kajabi build output (regenerate with the scripts in kajabi/)
+kajabi/*.line.txt
+kajabi/preview.html
+kajabi/landing-preview.html
+kajabi/landing/*.line.txt
+kajabi/results/*.line.txt
+kajabi/results/preview-*.html

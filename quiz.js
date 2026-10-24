@@ -9,7 +9,7 @@
    - The bucket with the most votes wins. Ties break by TIE_PRIORITY.
    - After the quiz we capture name + email, hand them to your email
      tool (see CONFIG.emailEndpoint), then REDIRECT to the matching
-     results page on sophiebyfield.com.
+     results page on fertilitycoachsophie.com (the Kajabi site).
 
    Everything you'd want to change lives in CONFIG, BUCKETS and
    QUESTIONS below. You shouldn't need to touch the logic section.
@@ -18,12 +18,13 @@
 /* ---- 1. CONFIG -------------------------------------------- */
 const CONFIG = {
   // Where each archetype's results page lives.
-  // (Your existing live pages — used for the fallback redirect below.)
+  // (The live Kajabi pages. Only used for the fallback redirect below; the
+  // Flodesk forms carry their own redirect, set inside Flodesk.)
   resultUrls: {
-    hopeful:  "https://sophiebyfield.com/results-hopeful/",
-    precise:  "https://sophiebyfield.com/results-precise/",
-    wellness: "https://sophiebyfield.com/results-wellness/",
-    resister: "https://sophiebyfield.com/results-resister/",
+    hopeful:  "https://www.fertilitycoachsophie.com/results-hopeful",
+    precise:  "https://www.fertilitycoachsophie.com/results-precise",
+    wellness: "https://www.fertilitycoachsophie.com/results-wellness",
+    resister: "https://www.fertilitycoachsophie.com/results-resister",
   },
 
   // Collect email before showing results? (You'll want this ON.)
